@@ -1,3 +1,33 @@
+function smallestword(arr) {
+    const letter = arr.splice(arr.length - 1)[0]; // fix: get the actual string
+
+    let result = [];
+    
+    arr.forEach((sentence) => {
+        let words = sentence.split(" ");
+        let matchingWords = [];
+
+        words.forEach((word) => {
+            if (word.includes(letter)) {
+                matchingWords.push(word);
+            }
+        });
+
+        if (matchingWords.length > 0) {
+            let shortestWord = matchingWords[0];
+
+            for (let i = 1; i < matchingWords.length; i++) {
+                if (matchingWords[i].length < shortestWord.length) {
+                    shortestWord = matchingWords[i];
+                }
+            }
+
+            result.push(shortestWord);
+        }
+    });
+
+    return result.join(" ");
+}
 const jwt = require("jsonwebtoken");
 
 const ensureAuthenticated = (req, res, next) => {
