@@ -1,33 +1,33 @@
-function smallestword(arr) {
-    const letter = arr.splice(arr.length - 1)[0]; // fix: get the actual string
+// function smallestword(arr) {
+//     const letter = arr.splice(arr.length - 1)[0]; // fix: get the actual string
 
-    let result = [];
+//     let result = [];
     
-    arr.forEach((sentence) => {
-        let words = sentence.split(" ");
-        let matchingWords = [];
+//     arr.forEach((sentence) => {
+//         let words = sentence.split(" ");
+//         let matchingWords = [];
 
-        words.forEach((word) => {
-            if (word.includes(letter)) {
-                matchingWords.push(word);
-            }
-        });
+//         words.forEach((word) => {
+//             if (word.includes(letter)) {
+//                 matchingWords.push(word);
+//             }
+//         });
 
-        if (matchingWords.length > 0) {
-            let shortestWord = matchingWords[0];
+//         if (matchingWords.length > 0) {
+//             let shortestWord = matchingWords[0];
 
-            for (let i = 1; i < matchingWords.length; i++) {
-                if (matchingWords[i].length < shortestWord.length) {
-                    shortestWord = matchingWords[i];
-                }
-            }
+//             for (let i = 1; i < matchingWords.length; i++) {
+//                 if (matchingWords[i].length < shortestWord.length) {
+//                     shortestWord = matchingWords[i];
+//                 }
+//             }
 
-            result.push(shortestWord);
-        }
-    });
+//             result.push(shortestWord);
+//         }
+//     });
 
-    return result.join(" ");
-}
+//     return result.join(" ");
+// }
 const jwt = require("jsonwebtoken");
 
 const ensureAuthenticated = (req, res, next) => {
